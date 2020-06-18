@@ -2,9 +2,6 @@
 // We can include more options, integrated with Navigation, which can be tracked by just putting some tracking sensors at different Locations of Mall,
 //which will help staff and managers to track the cart, inside the store.
 
-
-
-
 #include <SoftwareSerial.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
@@ -31,7 +28,7 @@ int abhi2 = 0;
 int abhi3 = 0;
 int abhi4 = 0;
 int abhi5 = 0;
-int flag6 = 0;
+int abhi6 = 0;
 
 void setup()
 {
@@ -372,7 +369,7 @@ void loop()
     abhi5 = 0;
   }
 
-  if (cmp == '6' && flag6 == 0)
+  if (cmp == '6' && abhi6 == 0)
   {
     lcd.clear();
     lcd.setCursor(0, 0);
