@@ -5,6 +5,7 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,15 +26,18 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class GroceryListActivity extends Activity {
 	AutoCompleteTextView tvNewItem;
-	Button btnAddItem;
+	Button btnAddItem, PayButton;
 	ListView lvItems;
 	LayoutInflater mFactory;
 	Cursor mCursor;
+	TextView totalprice;
+
 	
     /** Called when the activity is first created. */
     @Override
@@ -44,6 +48,8 @@ public class GroceryListActivity extends Activity {
         tvNewItem = (AutoCompleteTextView)findViewById(R.id.tvNewItem);
         btnAddItem = (Button)findViewById(R.id.btnAddItem);
         lvItems = (ListView)findViewById(R.id.lvItems);
+        PayButton = (Button) findViewById(R.id.PayButton);
+        totalprice =(TextView) findViewById(R.id.setprice);
         
         mFactory = LayoutInflater.from(this);
         mCursor = getContentResolver().query(GroceryProvider.CONTENT_URI, GroceryProvider.ITEM_QUERY_COLUMNS, null, null, GroceryProvider.DEFAULT_SORT_ORDER);
@@ -80,6 +86,18 @@ public class GroceryListActivity extends Activity {
 					return true;
 				}
 				return false;
+			}
+		});
+
+        PayButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if(Integer.parseInt(totalprice.getText().toString())>0){
+					Intent intent = new Intent(GroceryListActivity.this, PaymentActivity.class);
+					intent.putExtra("amount",Integer.parseInt(totalprice.getText().toString()));
+					startActivity(intent);
+					finish();
+				}
 			}
 		});
     }

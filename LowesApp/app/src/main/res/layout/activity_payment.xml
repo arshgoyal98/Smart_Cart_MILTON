@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF2196F3"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="345dp"
+        android:layout_height="287dp"
+        android:layout_margin="10dp"
+        tools:srcCompat="@drawable/lowelogo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:text="Thank You for shopping with us!"
+        android:textColor="#F44336"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/amount_et"
+        android:layout_width="373dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Amount"
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        android:textColor="#FFFF"
+        android:textColorHint="#FFFF"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/upi_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="UPI ID"
+        android:text="abhinav26@gmail.com"
+        android:textColor="#FFFF"
+        android:textColorHint="#FFFF" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Name"
+        android:text="Abhinav Rastogi"
+        android:textColor="#FFFF"
+        android:textColorHint="#FFFF" />
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Note"
+        android:text="Here's some money bro!"
+        android:textColor="#FFFF"
+        android:textColorHint="#FFFF" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#F44336"
+        android:padding="7dp"
+        android:text="Pay using UPI"
+        android:textColor="#fff" />
+
+
+</LinearLayout>
